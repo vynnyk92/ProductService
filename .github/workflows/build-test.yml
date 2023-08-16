@@ -13,6 +13,9 @@ jobs:
       image-number: ${{steps.image-number-generator.outputs.image-number}}
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+    
       - name: Build Image Number
         id: image-number-generator
         run: echo image-number= ${{github.event.pull_request.number}} >> $GITHUB_OUTPUT
