@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: product-pod
+spec:
+  containers:
+  - name: product
+    image: vynnyal/productservice
+    resources:
+      limits:
+        memory: "56Mi"
+        cpu: "128m"
+    ports:
+      - containerPort: 8080
